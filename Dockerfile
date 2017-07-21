@@ -17,5 +17,7 @@ RUN    apt-get install -y --no-install-recommends php-cli php-mcrypt php-xdebug 
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod a+x /usr/local/bin/docker-entrypoint.sh
 
+VOLUME "/etc/cron.d"
+
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD  ["cron", "start","-f"]
