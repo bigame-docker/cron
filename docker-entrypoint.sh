@@ -1,8 +1,8 @@
 #!/bin/bash
 
-chown -R root /etc/cron.d
-chmod -R 644 /etc/cron.d
+chown root /etc/cron.d/*
+chmod 644 /etc/cron.d/*
 
-[ -e /etc/cron.d/*.sh ] && chmod a+x /etc/cron.d/*.sh
+find /etc/cron.d/ -name "*.sh" -exec chmod +x {} \;
 
 exec "$@"
