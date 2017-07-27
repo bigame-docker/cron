@@ -15,6 +15,7 @@ RUN    apt-get install -y --no-install-recommends php-cli php-mcrypt php-xdebug 
             bash-completion\
             openssh-client\
             ca-certificates\
+            rsync\
        &&rm -rf /var/lib/apt/lists/*
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod a+x /usr/local/bin/docker-entrypoint.sh
